@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://bakalari.zskraslice.cz/login -->
+<html><script type="text/javascript" id="custom-useragent-string-page-script"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Bakaláři - přihlášení do systému</title>
+    
+    <meta id="bkViewport" name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS-->
+    <link rel="stylesheet" href="./index_files/fonty.css" type="text/css">
+    <link rel="stylesheet" href="./index_files/base.css" type="text/css">
+    <link rel="stylesheet" href="./index_files/loginpage.css" type="text/css">
+    <link rel="stylesheet" href="./index_files/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="./index_files/jquery-ui.theme.min.css" type="text/css">
+    <link rel="stylesheet" href="./index_files/ls-capslock.css" type="text/css">
+    <link rel="stylesheet" href="./index_files/style.css" type="text/css">
+    <link rel="stylesheet" href="./index_files/font-awesome.min.css" type="text/css">
+    <!--JQuery-->
+    <script src="./index_files/jquery.min.js.stažený soubor"></script>
+    <script src="./index_files/jquery-ui.min.js.stažený soubor"></script>
+    <script src="./index_files/ls-capslock.js.stažený soubor"></script>
+    <script src="./index_files/loginFunctions.js.stažený soubor"></script>
+    <script src="./index_files/master_core.js.stažený soubor"></script>
+    <script type="text/javascript">
+        var unsecuredConnectionMsg = "Aplikace je nedostatečně zabezpečena! Chybí šifrované spojení. Více se dozvíte na <a href='http://www.bakalari.cz/static/gdpr' target='_blank' class='warning-link'>našich stránkách</a>.";
+        var unsupportedBrowserMsg = "Využíváte nepodporovaný prohlížeč. Některé funkcionality nemusí fungovat podle očekávání.";
+    </script>
+    <link rel="shortcut icon" href="https://bakalari.zskraslice.cz/next/images/favicon.ico">
+</head>
+
+<body>
+    <form id="formlogin" action="https://bakalari.zskraslice.cz/Login" onsubmit="makeDisable()">
+        <div id="outer">
+            <div id="middle">
+                <div id="generalWarning" class="general-warning" style="display: none;"></div>
+                <div id="inner">
+                    <a href="https://bakalari.zskraslice.cz/login#" id="loginLogo"><img src="./index_files/logo-bakalariLogin-252x51-min.png" alt="Bakaláři"></a>
+                    <div class="bk-login-schoolName">Střední škola, základní škola a mateřská škola Kraslice, příspěvková organizace</div>
+                    <div id="loginBox">
+                        <div id="info" onclick="showPopup(this)">i</div>
+                            <div class="space-top-40"></div>
+                        <div onkeypress="onEnterSubmit(event)" class="ls-capslock">
+                            <div class="question-container">
+                                <input type="text" name="username" id="username" class="inputLogin" placeholder="Uživatelské jméno" required="">
+                                <span id="question" class="ico32-menu-napoveda link" onclick="showPopup(this)" style="visibility: visible"></span>
+                            </div>
+                            <input type="password" name="password" id="password" class="inputLogin ls-capslock-input" placeholder="Heslo" required=""><div class="ls-capslock-message">Máte zapnutý Caps Lock</div>
+                            <div class="checkbox-wrap">
+                                    <input type="checkbox" name="persistent" id="persistent" value="true">
+                                    <label for="persistent" id="labelpersistent" class="stay-logged-in"><span>Zapamatovat</span></label>
+                                                                    <a href="https://bakalari.zskraslice.cz/next/serpwd.aspx" class="forgotten-password" tabindex="-1">Zapomenuté heslo</a>
+                            </div>
+                            <input type="hidden" name="returnUrl">
+                                <button class="btn-login" type="submit" name="login" formaction="Login" formmethod="post" id="loginButton">
+                                    <span class="btn-login-loader"><i class="fa fa-spinner fa-spin"></i>Načítám</span>
+                                    <span class="btn-login-text">Přihlásit</span>
+                                </button>
+                                                            <div id="MSLoginDiv">
+                                    <div class="separator">
+                                        <span class="bk-separator"></span>
+                                        <span>nebo</span>
+                                        <span class="bk-separator"></span>
+                                    </div>
+                                    <button class="btn-mslogin" type="submit" name="microsoft" formaction="openid?type=microsoft" formmethod="post" formnovalidate="" id="loginMSButton">
+                                        <span class="fa fa-2x fa-windows"></span>
+                                        <span>Přihlásit účtem Microsoft</span>
+                                    </button>
+                                </div>
+                            <div class="both"></div>
+                        </div>
+                    </div>
+                    <div class="mobile-app">
+                        <div class="mobile-app-text"><span>Vyzkoušejte aplikaci Bakaláři na svém chytrém telefonu</span></div>
+                        <div class="mobile-app-img">
+                            <a class="link" target="_blank" href="https://play.google.com/store/apps/details?id=cz.bakalari.mobile&amp;hl=cs"><img src="./index_files/btn-googlePlay-cerna-min.png"></a>
+                            <a class="link" target="_blank" href="https://itunes.apple.com/cz/app/bakalari-online/id1459368580?mt=8"><img src="./index_files/btn-appStore-cerna-min.png"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="info_popUp" class="login-popup" style="display: none;">
+                <div class="block-style title">
+                    <span>Střední škola, základní škola a mateřská škola Kraslice, příspěvková organizace</span>
+                </div>
+                <div class="block-style info">
+                    <span>Vítejte v informačním systému SŠ, ZŠ a MŠ Kraslice
+<br><br><br>
+Přihlašovací údaje vám sdělí na požádání třídní učitel.</span>
+                </div>
+                <div class="block-style bottom">
+                    <span>BAKALÁŘI software s.r.o. - 14.02.2025 (1.73.214.1)</span>
+                </div>
+            </div>
+
+            <div id="question_popUp" class="login-popup" style="display: none;">
+                <div class="block-style help">
+                    <div class="block-style">
+                        Vítejte v informačním systému SŠ, ZŠ a MŠ Kraslice
+Přihlašovací údaje vám sdělí na požádání třídní učitel.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+
+
+</body></html>
