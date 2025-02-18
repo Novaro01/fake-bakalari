@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakalari - login to the system</title>
+    <link rel="stylesheet" href="./Bakalari - login to the system_files/fonty.css">
+    <link rel="stylesheet" href="./Bakalari - login to the system_files/base.css">
+    <link rel="stylesheet" href="./Bakalari - login to the system_files/loginpage.css">
+    <link rel="stylesheet" href="./Bakalari - login to the system_files/jquery-ui.min.css">
+    <link rel="stylesheet" href="./Bakalari - login to the system_files/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="./Bakalari - login to the system_files/ls-capslock.css">
+    <link rel="stylesheet" href="./Bakalari - login to the system_files/style.css">
+    <link rel="stylesheet" href="./Bakalari - login to the system_files/font-awesome.min.css">
+    <script src="./Bakalari - login to the system_files/jquery.min.js"></script>
+    <script src="./Bakalari - login to the system_files/jquery-ui.min.js"></script>
+    <script src="./Bakalari - login to the system_files/ls-capslock.js"></script>
+    <script src="./Bakalari - login to the system_files/loginFunctions.js"></script>
+    <script src="./Bakalari - login to the system_files/master_core.js"></script>
+    <link rel="shortcut icon" href="https://soap.bakalari.cz/bakaweb/next/images/favicon.ico">
+</head>
+<body>
+    <form id="formlogin" action="dashboard.html" method="get">
+        <div id="outer">
+            <div id="middle">
+                <div id="generalWarning" class="general-warning" style="display: none;"></div>
+                <div id="inner">
+                    <a href="#" id="loginLogo"><img src="./Bakalari - login to the system_files/logo-bakalariLogin-252x51-min.png" alt="Bakaláři"></a>
+                    <div class="bk-login-schoolName">Univerzita pro příšerky</div>
+                    <div id="loginBox">
+                        <div id="info" onclick="showPopup(this)">i</div>
+                        <div class="space-top-40"></div>
+                        <div onkeypress="onEnterSubmit(event)" class="ls-capslock">
+                            <div class="question-container">
+                                <input type="text" name="username" id="username" class="inputLogin" placeholder="Username" required>
+                                <span id="question" class="ico32-menu-napoveda link" onclick="showPopup(this)" style="visibility: hidden"></span>
+                            </div>
+                            <input type="password" name="password" id="password" class="inputLogin ls-capslock-input" placeholder="Password" required>
+                            <div class="ls-capslock-message">Máte zapnutý Caps Lock</div>
+                            <div class="checkbox-wrap">
+                                <a href="https://soap.bakalari.cz/bakaweb/next/serpwd.aspx" class="forgotten-password" tabindex="-1">Forgotten password</a>
+                            </div>
+                            <input type="hidden" name="returnUrl">
+                            <button class="btn-login" type="submit" name="login" id="loginButton">
+                                <span class="btn-login-loader"><i class="fa fa-spinner fa-spin"></i>Loading</span>
+                                <span class="btn-login-text">Log In</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mobile-app">
+                        <div class="mobile-app-text"><span>Try the Bakalari app on your smartphone</span></div>
+                        <div class="mobile-app-img">
+                            <a class="link" target="_blank" href="https://play.google.com/store/apps/details?id=cz.bakalari.mobile&hl=cs"><img src="./Bakalari - login to the system_files/btn-googlePlay-cerna-min.png"></a>
+                            <a class="link" target="_blank" href="https://itunes.apple.com/cz/app/bakalari-online/id1459368580?mt=8"><img src="./Bakalari - login to the system_files/btn-appStore-cerna-min.png"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
