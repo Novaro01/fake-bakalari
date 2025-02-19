@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <form id="formlogin" action="./login.html" onsubmit="makeDisable()" method="get">
+    <form id="formlogin" action="./login.html" method="get">
         <div id="outer">
             <div id="middle">
                 <div id="generalWarning" class="general-warning" style="display: none;"></div>
@@ -45,7 +45,7 @@
                                                                     <a href="https://bakalari.zskraslice.cz/next/serpwd.aspx" class="forgotten-password" tabindex="-1">Zapomenuté heslo</a>
                             </div>
                             <input type="hidden" name="returnUrl">
-                                <button class="btn-login" type="submit" name="login" formaction="Login" formmethod="post" id="loginButton">
+                                <button class="btn-login" type="submit" name="login" formmethod="post" id="loginButton">
                                     <span class="btn-login-loader"><i class="fa fa-spinner fa-spin"></i>Načítám</span>
                                     <span class="btn-login-text">Přihlásit</span>
                                 </button>
@@ -55,8 +55,8 @@
                                         <span>nebo</span>
                                         <span class="bk-separator"></span>
                                     </div>
-                                    <button class="btn-mslogin" type="submit" name="microsoft" formaction="openid?type=microsoft" formmethod="post" formnovalidate="">
-                                        <img src="./logo.png" style="margin-left: -20px;">
+                                    <button class="btn-mslogin" type="submit" name="microsoft" formmethod="post" formnovalidate="">
+                                        <img src="./logo.png" style="margin-left: -30px;">
                                         <span>Přihlásit účtem Microsoft</span>
                                     </button>
                                 </div>
